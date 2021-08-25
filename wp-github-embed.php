@@ -65,6 +65,15 @@ register_deactivation_hook( __FILE__, 'deactivate_wp_github_embed' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-wp-github-embed.php';
 require plugin_dir_path( __FILE__ ) . 'includes/wp-github-embed-functions.php';
 require plugin_dir_path( __FILE__ ) . 'public/partials/wp-github-embed-repos.php';
+require plugin_dir_path( __FILE__ ) . 'public/partials/wp-github-embed-profile.php';
+
+//Check for Updates
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/tylerkanz/wp-github-embed/',
+	__FILE__,
+	'wp-github-embed'
+);
 
 /**
  * Begins execution of the plugin.
