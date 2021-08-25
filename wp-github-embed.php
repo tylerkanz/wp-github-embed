@@ -16,7 +16,7 @@
  * Plugin Name:       WP GitHub Embed
  * Plugin URI:        https://tylerkanz.com
  * Description:       Embed Repos and Profile attributes from your GitHub profile.
- * Version:           0.1.02
+ * Version:           0.1.05
  * Author:            Tyler Kanz
  * Author URI:        https://tylerkanz.com
  * License:           GPL-2.0+

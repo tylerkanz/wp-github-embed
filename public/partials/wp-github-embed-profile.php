@@ -33,19 +33,27 @@ function gh_profile_func($atts = array())
                 <div class="col-lg border-bottom">
                     <ul class="list-group flex-row">
                         <li class="list-group-item bg-transparent border-0">
-                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=repositories">Repositories</a>
+                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=repositories">
+                                <i class="fas fa-book mr-2"></i>Repositories
+                            </a>
                             <span class="badge badge-primary badge-pill"><?php echo $github_profile->public_repos; ?></span>
                         </li>
                         <li class="list-group-item bg-transparent border-0">
-                            <a>Gists</a>
+                            <a>
+                                <i class="far fa-file mr-2"></i>Gists
+                            </a>
                             <span class="badge badge-primary badge-pill"><?php echo $github_profile->public_gists; ?></span>
                         </li>
                         <li class="list-group-item bg-transparent border-0">
-                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=followers">Followers</a>
+                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=followers">
+                                <i class="fas fa-users mr-2"></i>Followers
+                            </a>
                             <span class="badge badge-primary badge-pill"><?php echo $github_profile->followers; ?></span>
                         </li>
                         <li class="list-group-item bg-transparent border-0">
-                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=following">Following</a>
+                            <a class="text-secondary" href="https://github.com/<?php echo $github_profile->login; ?>?tab=following">
+                                <i class="fas fa-user-friends mr-2"></i>Following
+                            </a>
                             <span class="badge badge-primary badge-pill"><?php echo $github_profile->following; ?></span>
                         </li>
                     </ul>
@@ -97,11 +105,13 @@ function gh_profile_func($atts = array())
                     <?php endif; ?>
                 </div>
                 <?php if ($github_profile->login) : ?>
-                    <div class="col-6 mx-auto">
-
+                    <div class="col-6 mx-auto mt-4">
                         <h3>Bio</h3>
                         <hr class="ml-0 ">
                         <p><?php echo $github_profile->bio; ?></p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary text-light" href="https://github.com/<?php echo $github_profile->login; ?>">View on GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
