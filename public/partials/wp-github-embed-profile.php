@@ -2,6 +2,7 @@
 add_shortcode('gh-profile', 'gh_profile_func');
 function gh_profile_func($atts = array())
 {
+    ob_start();
     extract(shortcode_atts(array('user' => ''), $atts));
     $response = fetch_from_github('https://api.github.com/users/' . $user);
     $github_profile = json_decode($response['body']);
@@ -75,7 +76,7 @@ function gh_profile_func($atts = array())
                             <i class="fas fa-globe"></i>
                             <a class="text-secondary mb-0 pl-2" href="<?php echo $github_profile->blog; ?>">
                                 <?php echo $github_profile->blog; ?>
-                    </a>
+                            </a>
                         </div>
                     <?php endif; ?>
                     <?php if ($github_profile->location) : ?>
@@ -108,4 +109,5 @@ function gh_profile_func($atts = array())
     </div>
     </div>
 <?php
+    return ob_get_clean();
 }
