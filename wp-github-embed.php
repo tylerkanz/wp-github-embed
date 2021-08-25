@@ -75,6 +75,9 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'wp-github-embed'
 );
 
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
 /**
  * Begins execution of the plugin.
  *
