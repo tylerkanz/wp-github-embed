@@ -29,10 +29,17 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+
+import { TextControl } from '@wordpress/components';
+
+export default function Edit( { attributes, setAttributes } ) {
 	return (
-		<p {...useBlockProps()}>
-			{__('WP GitHub Embed – hello from the editor!', 'wp-github-embed')}
-		</p>
+        <div { ...useBlockProps() }>
+            <TextControl
+                label={ __( 'GitHub Profile URL', 'gutenpride' ) }
+                value={ attributes.message }
+                onChange={ ( val ) => setAttributes( { message: val } ) }
+            />
+        </div>
 	);
 }

@@ -25,7 +25,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('wp-github-embed/wp-github-embed', {
+registerBlockType('create-block/wp-github-embed', {
 	/**
 	 * @see ./edit.js
 	 */

@@ -1,8 +1,8 @@
-=== WP GitHub Embed ===
+=== Wp Github Embed ===
 Contributors:      Tyler Kanz
 Tags:              block
-Tested up to:      5.8.0
-Stable tag:        2.0.10
+Tested up to:      5.9
+Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,7 +45,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 2.0.10 =
+= 0.1.0 =
 * Release
 
 == Arbitrary section ==
