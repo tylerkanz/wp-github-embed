@@ -25,6 +25,12 @@ function create_block_wp_github_embed_block_init() {
 }
 add_action( 'init', 'create_block_wp_github_embed_block_init' );
 
-//Includes
-include('./inc/activation.php');
+function activate_wp_github_embed() {
+	require_once plugin_dir_path( __FILE__ ) . 'inc/activation.php';
+	Wp_Github_Embed_Activator::activate();
+}
+
+register_activation_hook( __FILE__, 'activate_wp_github_embed' );
+
+
 

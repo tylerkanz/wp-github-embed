@@ -1,15 +1,22 @@
 <?php
-global $wpdb;
-$table_name = $wpdb->prefix . 'dbdelta_test_001';
-$wpdb_collate = $wpdb->collate;
-$sql =
-"CREATE TABLE {$table_name} (
-    id mediumint(8) unsigned NOT NULL auto_increment ,
-    first varchar(255) NULL,
-    PRIMARY KEY  (id),
-    KEY first (first)
-    )
-    COLLATE {$wpdb_collate}";
- 
-require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-dbDelta( $sql );
+
+register_activation_hook(__FILE__, 'create_maybe');
+
+class Wp_Github_Embed_Activator {
+
+	public static function activate() {
+
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' ); 
+		global $wpdb;
+		$sql = "CREATE TABLE  ". $wpdb->prefix . "git_embed_meta (
+			meta_id bigint(20) NOT NULL auto_increment,
+			meta_key varchar(255) default NULL,
+			meta_value longtext,
+			PRIMARY KEY  (`meta_id`)
+		  )";
+
+		maybe_create_table( $wpdb->prefix . 'git_embed_meta', $sql );
+
+	}
+
+}
