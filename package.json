@@ -1,8 +1,8 @@
 {
 	"name": "wp-github-embed",
 	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"author": "The WordPress Contributors",
+	"description": "Embed your Github profile as a block!",
+	"author": "Tyler Kanz",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -16,5 +16,8 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^21.0.1"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^6.0.1"
 	}
 }

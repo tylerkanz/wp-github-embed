@@ -12,6 +12,8 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import { useBlockProps } from '@wordpress/block-editor';
+import apiFetch from '@wordpress/api-fetch';
+import axios from 'axios';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -22,9 +24,37 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save( { attributes } ) {
-	
+export default function save({ attributes }) {
+    meta = getGitMeta();
 
-
-    return <div { ...useBlockProps.save() }>{ attributes.message }</div>;
+    return <div style="background: 'green'" {...useBlockProps.save()}>
+        {attributes.message}
+        </div>;
 }
+
+function getGitMeta() {
+    let headers = {
+        'accept': '*/*'
+    }
+
+    const req = apiFetch({
+        url: 'https://api.github.com/users/tylerkanz',
+        headers: headers,
+        mode: 'no-cors',
+        method: 'GET'
+    }).then((result)=>{
+        return result
+    }).catch(e=>{
+        console.log('Error: ', e)
+    })
+}
+
+
+
+
+
+
+
+
+
+
