@@ -34,6 +34,6 @@ register_activation_hook( __FILE__, 'activate_wp_github_embed' );
 
 
 //Endpoints
-include('./endpoints/get_github_meta.php');
+include('/endpoints/get-github-meta.php');
 
 
